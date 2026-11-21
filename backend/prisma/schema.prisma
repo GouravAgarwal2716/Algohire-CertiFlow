@@ -1,0 +1,153 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  TRAINING_CENTRE
+  DISTRICT_OFFICER
+  QUALITY_TEAM
+  STATE_OFFICE
+}
+
+enum BatchStatus {
+  DRAFT
+  PENDING_DISTRICT
+  PENDING_QUALITY
+  PENDING_STATE
+  APPROVED
+  ISSUING
+  COMPLETED
+  CHANGES_REQUESTED
+  REJECTED
+}
+
+enum ApprovalDecision {
+  APPROVED
+  REJECTED
+  CHANGES_REQUESTED
+}
+
+enum CertificateStatus {
+  VALID
+  REVOKED
+}
+
+enum WhatsAppStatus {
+  PENDING
+  SENT
+  FAILED
+}
+
+model User {
+  id                 String          @id @default(uuid())
+  name               String
+  email              String          @unique
+  role               Role
+  districtId         String?
+  centreId           String?
+  createdAt          DateTime        @default(now())
+  approvals          BatchApproval[]
+  revokedCertificates Certificate[]  @relation("RevokedByUser")
+}
+
+model Batch {
+  id              String          @id @default(uuid())
+  title           String
+  courseName      String
+  centreId        String
+  districtId      String
+  status          BatchStatus     @default(DRAFT)
+  revisionNumber  Int             @default(1)
+  candidateCount  Int             @default(0)
+  isEscalated     Boolean         @default(false)
+  escalatedAt     DateTime?
+  createdAt       DateTime        @default(now())
+  updatedAt       DateTime        @updatedAt
+  candidates      Candidate[]
+  approvals       BatchApproval[]
+  certificates    Certificate[]
+
+  @@index([status])
+  @@index([districtId])
+  @@index([centreId])
+}
+
+model Candidate {
+  id          String       @id @default(uuid())
+  batchId     String
+  batch       Batch        @relation(fields: [batchId], references: [id], onDelete: Cascade)
+  fullName    String
+  phone       String
+  email       String?
+  rollNumber  String
+  score       Float
+  createdAt   DateTime     @default(now())
+  certificate Certificate?
+
+  @@unique([batchId, rollNumber])
+  @@unique([batchId, phone])
+  @@index([batchId])
+}
+
+model BatchApproval {
+  id             String           @id @default(uuid())
+  batchId        String
+  batch          Batch            @relation(fields: [batchId], references: [id], onDelete: Cascade)
+  officerId      String
+  officer        User             @relation(fields: [officerId], references: [id])
+  role           Role
+  revisionNumber Int
+  decision       ApprovalDecision
+  reason         String?
+  createdAt      DateTime         @default(now())
+
+  @@unique([batchId, officerId, revisionNumber])
+  @@index([batchId, revisionNumber])
+}
+
+model Certificate {
+  id                String            @id @default(uuid())
+  certificateNumber String            @unique
+  verificationCode  String            @unique
+  batchId           String
+  batch             Batch             @relation(fields: [batchId], references: [id])
+  candidateId       String            @unique
+  candidate         Candidate         @relation(fields: [candidateId], references: [id], onDelete: Cascade)
+  status            CertificateStatus @default(VALID)
+  pdfPath           String?
+  whatsappStatus    WhatsAppStatus    @default(PENDING)
+  whatsappMessageId String?
+  issuedAt          DateTime          @default(now())
+  revokedAt         DateTime?
+  revocationReason  String?
+  revokedById       String?
+  revokedBy         User?             @relation("RevokedByUser", fields: [revokedById], references: [id])
+
+  @@unique([batchId, candidateId])
+  @@index([certificateNumber])
+  @@index([verificationCode])
+  @@index([status])
+}
+
+model AuditLog {
+  id            String   @id @default(uuid())
+  correlationId String?
+  actorId       String?
+  actorRole     String?
+  action        String
+  entityType    String
+  entityId      String
+  previousState String?
+  newState      String?
+  metadata      Json?
+  createdAt     DateTime @default(now())
+
+  @@index([entityId])
+  @@index([correlationId])
+  @@index([createdAt])
+}

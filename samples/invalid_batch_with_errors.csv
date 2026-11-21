@@ -1,0 +1,6 @@
+fullName,phone,email,rollNumber,score
+Valid Candidate,9876543210,valid@example.com,BAD-01,85.0
+Bad Phone Candidate,987654321,badphone@example.com,BAD-02,78.0
+Score Over Limit,9876543212,overscore@example.com,BAD-03,105.0
+Duplicate Roll Candidate,9876543213,duproll@example.com,BAD-01,90.0
+Negative Score Candidate,9876543214,negative@example.com,BAD-05,-15.0

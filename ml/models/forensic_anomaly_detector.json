@@ -1,0 +1,1549 @@
+{
+  "model_name": "CertiFlow-Forensic-Anomaly-Detector",
+  "version": "1.0.0",
+  "feature_names": [
+    "candidate_count",
+    "mean_score",
+    "std_dev",
+    "pass_rate",
+    "sequential_phone_ratio",
+    "submission_hour",
+    "centre_historic_pass_ratio",
+    "score_skewness"
+  ],
+  "rf_trees": [
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6904,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.998,
+        "left": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.6249,
+          "left": {
+            "value": 0.0031
+          },
+          "right": {
+            "value": 1.0
+          }
+        },
+        "right": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.1235,
+          "left": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 5.035,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "value": 0.0
+            }
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1938,
+      "left": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9999,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 1,
+          "feature_name": "mean_score",
+          "threshold": 88.185,
+          "left": {
+            "feature": 4,
+            "feature_name": "sequential_phone_ratio",
+            "threshold": 0.1197,
+            "left": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.6583,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            },
+            "right": {
+              "value": 1.0
+            }
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6882,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.0476,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.1872,
+          "left": {
+            "feature": 3,
+            "feature_name": "pass_rate",
+            "threshold": 0.9617,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "feature": 1,
+              "feature_name": "mean_score",
+              "threshold": 84.205,
+              "left": {
+                "value": 0.0
+              },
+              "right": {
+                "value": 1.0
+              }
+            }
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1884,
+      "left": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9967,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.7201,
+          "left": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.6992,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 7,
+              "feature_name": "score_skewness",
+              "threshold": -1.132,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 7,
+      "feature_name": "score_skewness",
+      "threshold": -0.9119,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 6,
+        "feature_name": "centre_historic_pass_ratio",
+        "threshold": 0.7063,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 6.73,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.6887,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 5,
+              "feature_name": "submission_hour",
+              "threshold": 2.0,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "feature": 2,
+                "feature_name": "std_dev",
+                "threshold": 7.48,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.3,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 1,
+        "feature_name": "mean_score",
+        "threshold": 81.91,
+        "left": {
+          "value": 0.0031
+        },
+        "right": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.709,
+          "left": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.6902,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 2,
+              "feature_name": "std_dev",
+              "threshold": 8.5,
+              "left": {
+                "feature": 6,
+                "feature_name": "centre_historic_pass_ratio",
+                "threshold": 0.7014,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0
+                }
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.31,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.315,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 8.005,
+          "left": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 6.93,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.6997,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1921,
+      "left": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.275,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 3.915,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 5,
+            "feature_name": "submission_hour",
+            "threshold": 19.5,
+            "left": {
+              "feature": 7,
+              "feature_name": "score_skewness",
+              "threshold": -1.5114,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "feature": 4,
+                "feature_name": "sequential_phone_ratio",
+                "threshold": 0.0498,
+                "left": {
+                  "value": 0.0
+                },
+                "right": {
+                  "value": 0.3333
+                }
+              }
+            },
+            "right": {
+              "feature": 1,
+              "feature_name": "mean_score",
+              "threshold": 84.61,
+              "left": {
+                "value": 0.0
+              },
+              "right": {
+                "value": 1.0
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 7,
+      "feature_name": "score_skewness",
+      "threshold": -0.875,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.4087,
+        "left": {
+          "value": 0.0009
+        },
+        "right": {
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "feature": 3,
+      "feature_name": "pass_rate",
+      "threshold": 0.9478,
+      "left": {
+        "value": 0.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.1365,
+        "left": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.7016,
+          "left": {
+            "feature": 1,
+            "feature_name": "mean_score",
+            "threshold": 81.895,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "value": 1.0
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        },
+        "right": {
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "feature": 7,
+      "feature_name": "score_skewness",
+      "threshold": -0.9129,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.4547,
+        "left": {
+          "value": 0.0051
+        },
+        "right": {
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6861,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9996,
+        "left": {
+          "value": 0.005
+        },
+        "right": {
+          "feature": 1,
+          "feature_name": "mean_score",
+          "threshold": 82.285,
+          "left": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.7233,
+            "left": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.7084,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            },
+            "right": {
+              "value": 0.0
+            }
+          },
+          "right": {
+            "feature": 7,
+            "feature_name": "score_skewness",
+            "threshold": -0.8075,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.7051,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6919,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9976,
+        "left": {
+          "value": 0.004
+        },
+        "right": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.0829,
+          "left": {
+            "value": 0.0
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.295,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 5,
+        "feature_name": "submission_hour",
+        "threshold": 6.5,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 6.95,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.5901,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "value": 0.0062
+            }
+          }
+        },
+        "right": {
+          "feature": 5,
+          "feature_name": "submission_hour",
+          "threshold": 21.5,
+          "left": {
+            "value": 0.0
+          },
+          "right": {
+            "feature": 4,
+            "feature_name": "sequential_phone_ratio",
+            "threshold": 0.0498,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "feature": 2,
+              "feature_name": "std_dev",
+              "threshold": 6.715,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.25
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.075,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.5305,
+        "left": {
+          "feature": 3,
+          "feature_name": "pass_rate",
+          "threshold": 0.9253,
+          "left": {
+            "value": 0.0
+          },
+          "right": {
+            "feature": 4,
+            "feature_name": "sequential_phone_ratio",
+            "threshold": 0.0493,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "feature": 1,
+              "feature_name": "mean_score",
+              "threshold": 80.945,
+              "left": {
+                "feature": 7,
+                "feature_name": "score_skewness",
+                "threshold": -0.7803,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0
+                }
+              },
+              "right": {
+                "feature": 0,
+                "feature_name": "candidate_count",
+                "threshold": 24.0,
+                "left": {
+                  "value": 0.0
+                },
+                "right": {
+                  "value": 1.0
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 1.0
+        }
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6917,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.0469,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 5.725,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 5.925,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 1,
+              "feature_name": "mean_score",
+              "threshold": 83.72,
+              "left": {
+                "value": 0.0
+              },
+              "right": {
+                "feature": 3,
+                "feature_name": "pass_rate",
+                "threshold": 0.9371,
+                "left": {
+                  "value": 0.0
+                },
+                "right": {
+                  "value": 1.0
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "feature": 3,
+      "feature_name": "pass_rate",
+      "threshold": 0.9455,
+      "left": {
+        "value": 0.0
+      },
+      "right": {
+        "feature": 6,
+        "feature_name": "centre_historic_pass_ratio",
+        "threshold": 0.7204,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 6.295,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 1,
+            "feature_name": "mean_score",
+            "threshold": 81.5,
+            "left": {
+              "feature": 4,
+              "feature_name": "sequential_phone_ratio",
+              "threshold": 0.5517,
+              "left": {
+                "feature": 7,
+                "feature_name": "score_skewness",
+                "threshold": -0.8258,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0
+                }
+              },
+              "right": {
+                "value": 1.0
+              }
+            },
+            "right": {
+              "value": 1.0
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.105,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 6,
+        "feature_name": "centre_historic_pass_ratio",
+        "threshold": 0.7141,
+        "left": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.6639,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.6997,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "value": 0.0
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.125,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.295,
+        "left": {
+          "feature": 5,
+          "feature_name": "submission_hour",
+          "threshold": 4.5,
+          "left": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 6.93,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 1,
+              "feature_name": "mean_score",
+              "threshold": 80.61,
+              "left": {
+                "value": 0.0
+              },
+              "right": {
+                "value": 1.0
+              }
+            }
+          },
+          "right": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 6.79,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.6491,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "feature": 7,
+                "feature_name": "score_skewness",
+                "threshold": -0.8815,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6822,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.375,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 5.79,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 3,
+            "feature_name": "pass_rate",
+            "threshold": 0.9743,
+            "left": {
+              "feature": 2,
+              "feature_name": "std_dev",
+              "threshold": 6.34,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "feature": 4,
+                "feature_name": "sequential_phone_ratio",
+                "threshold": 0.498,
+                "left": {
+                  "value": 0.0068
+                },
+                "right": {
+                  "value": 1.0
+                }
+              }
+            },
+            "right": {
+              "feature": 5,
+              "feature_name": "submission_hour",
+              "threshold": 5.0,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.696,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "value": 0.004
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1916,
+      "left": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.225,
+        "left": {
+          "feature": 3,
+          "feature_name": "pass_rate",
+          "threshold": 0.9945,
+          "left": {
+            "value": 0.0
+          },
+          "right": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 6.065,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "value": 0.0
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1953,
+      "left": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.225,
+        "left": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 3.625,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 3,
+            "feature_name": "pass_rate",
+            "threshold": 0.9601,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "feature": 7,
+              "feature_name": "score_skewness",
+              "threshold": -1.0373,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "feature": 5,
+                "feature_name": "submission_hour",
+                "threshold": 13.5,
+                "left": {
+                  "value": 0.0
+                },
+                "right": {
+                  "value": 1.0
+                }
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.305,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.375,
+        "left": {
+          "feature": 3,
+          "feature_name": "pass_rate",
+          "threshold": 0.9539,
+          "left": {
+            "feature": 3,
+            "feature_name": "pass_rate",
+            "threshold": 0.914,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "feature": 4,
+              "feature_name": "sequential_phone_ratio",
+              "threshold": 0.5134,
+              "left": {
+                "feature": 2,
+                "feature_name": "std_dev",
+                "threshold": 6.825,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0
+                }
+              },
+              "right": {
+                "value": 1.0
+              }
+            }
+          },
+          "right": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.6902,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 5,
+              "feature_name": "submission_hour",
+              "threshold": 6.5,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.14,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 8.295,
+        "left": {
+          "feature": 3,
+          "feature_name": "pass_rate",
+          "threshold": 0.9501,
+          "left": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 6.81,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "value": 0.0
+            }
+          },
+          "right": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.8013,
+            "left": {
+              "feature": 2,
+              "feature_name": "std_dev",
+              "threshold": 8.165,
+              "left": {
+                "feature": 3,
+                "feature_name": "pass_rate",
+                "threshold": 0.999,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.8333
+                }
+              },
+              "right": {
+                "value": 0.0
+              }
+            },
+            "right": {
+              "value": 0.0
+            }
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1992,
+      "left": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9981,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.6942,
+          "left": {
+            "value": 1.0
+          },
+          "right": {
+            "feature": 2,
+            "feature_name": "std_dev",
+            "threshold": 2.865,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 2,
+              "feature_name": "std_dev",
+              "threshold": 5.53,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          }
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 3,
+      "feature_name": "pass_rate",
+      "threshold": 0.9496,
+      "left": {
+        "value": 0.0
+      },
+      "right": {
+        "feature": 2,
+        "feature_name": "std_dev",
+        "threshold": 6.65,
+        "left": {
+          "value": 1.0
+        },
+        "right": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.7091,
+          "left": {
+            "feature": 6,
+            "feature_name": "centre_historic_pass_ratio",
+            "threshold": 0.6951,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 4,
+              "feature_name": "sequential_phone_ratio",
+              "threshold": 0.4003,
+              "left": {
+                "value": 0.0
+              },
+              "right": {
+                "value": 1.0
+              }
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.1986,
+      "left": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9999,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 1,
+          "feature_name": "mean_score",
+          "threshold": 85.625,
+          "left": {
+            "value": 0.0
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6867,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9988,
+        "left": {
+          "value": 0.0047
+        },
+        "right": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 8.27,
+          "left": {
+            "feature": 1,
+            "feature_name": "mean_score",
+            "threshold": 77.0,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "feature": 4,
+              "feature_name": "sequential_phone_ratio",
+              "threshold": 0.09,
+              "left": {
+                "value": 0.0
+              },
+              "right": {
+                "value": 1.0
+              }
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.125,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9337,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.4447,
+          "left": {
+            "feature": 5,
+            "feature_name": "submission_hour",
+            "threshold": 21.5,
+            "left": {
+              "feature": 5,
+              "feature_name": "submission_hour",
+              "threshold": 4.5,
+              "left": {
+                "feature": 6,
+                "feature_name": "centre_historic_pass_ratio",
+                "threshold": 0.6961,
+                "left": {
+                  "value": 1.0
+                },
+                "right": {
+                  "value": 0.0278
+                }
+              },
+              "right": {
+                "value": 0.0
+              }
+            },
+            "right": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.6979,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.193,
+      "left": {
+        "feature": 7,
+        "feature_name": "score_skewness",
+        "threshold": -0.4847,
+        "left": {
+          "feature": 6,
+          "feature_name": "centre_historic_pass_ratio",
+          "threshold": 0.703,
+          "left": {
+            "feature": 3,
+            "feature_name": "pass_rate",
+            "threshold": 0.9328,
+            "left": {
+              "value": 0.0
+            },
+            "right": {
+              "value": 1.0
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        },
+        "right": {
+          "value": 0.0
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.2003,
+      "left": {
+        "feature": 1,
+        "feature_name": "mean_score",
+        "threshold": 82.35,
+        "left": {
+          "value": 0.0
+        },
+        "right": {
+          "feature": 2,
+          "feature_name": "std_dev",
+          "threshold": 8.13,
+          "left": {
+            "feature": 7,
+            "feature_name": "score_skewness",
+            "threshold": -1.0155,
+            "left": {
+              "value": 1.0
+            },
+            "right": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.743,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            }
+          },
+          "right": {
+            "value": 0.0
+          }
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 4,
+      "feature_name": "sequential_phone_ratio",
+      "threshold": 0.2003,
+      "left": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.1293,
+        "left": {
+          "value": 0.0074
+        },
+        "right": {
+          "value": 1.0
+        }
+      },
+      "right": {
+        "value": 1.0
+      }
+    },
+    {
+      "feature": 6,
+      "feature_name": "centre_historic_pass_ratio",
+      "threshold": 0.6867,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 3,
+        "feature_name": "pass_rate",
+        "threshold": 0.9962,
+        "left": {
+          "value": 0.004
+        },
+        "right": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.1765,
+          "left": {
+            "feature": 7,
+            "feature_name": "score_skewness",
+            "threshold": -0.5032,
+            "left": {
+              "feature": 6,
+              "feature_name": "centre_historic_pass_ratio",
+              "threshold": 0.7177,
+              "left": {
+                "value": 1.0
+              },
+              "right": {
+                "value": 0.0
+              }
+            },
+            "right": {
+              "value": 0.0
+            }
+          },
+          "right": {
+            "value": 1.0
+          }
+        }
+      }
+    },
+    {
+      "feature": 2,
+      "feature_name": "std_dev",
+      "threshold": 5.055,
+      "left": {
+        "value": 1.0
+      },
+      "right": {
+        "feature": 4,
+        "feature_name": "sequential_phone_ratio",
+        "threshold": 0.5143,
+        "left": {
+          "feature": 4,
+          "feature_name": "sequential_phone_ratio",
+          "threshold": 0.4957,
+          "left": {
+            "value": 0.0062
+          },
+          "right": {
+            "value": 1.0
+          }
+        },
+        "right": {
+          "value": 1.0
+        }
+      }
+    }
+  ],
+  "metrics": {
+    "accuracy": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1_score": 1.0,
+    "confusion_matrix": {
+      "tp": 303,
+      "fp": 0,
+      "fn": 0,
+      "tn": 1697
+    }
+  }
+}
